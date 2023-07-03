@@ -4,9 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { toast } from "react-hot-toast";
 import NavLink from "./NavLink";
+import useTheme from "@/hooks/useTheme";
+import { useState } from "react";
 const navToggle = false;
 const NavBar = () => {
-    const navData = beforeLoginNavData;
+    const user = null;
+
+    const navData =user ? afterLoginNavData: beforeLoginNavData;
+    const {theme,toggleTheme} =useTheme()
+    const [navToggle, setNavToggle] = useState(false);
   return (
     <nav className="navbar sticky top-0 z-10 bg-slate-200 shadow-lg dark:bg-slate-900 lg:pr-3">
       <div className="flex-1">
@@ -118,9 +124,9 @@ const NavBar = () => {
        
         <label className="swap swap-rotate lg:ml-2">
           <input
-            onChange={()=>{}}
+            onChange={toggleTheme}
             type="checkbox"
-            // checked={theme === "dark"}
+            checked={theme === "dark"}
           />
           <svg
             className="swap-on h-9 w-9 fill-current"
@@ -141,7 +147,7 @@ const NavBar = () => {
       <label className="swap-rotate swap btn-ghost btn-circle btn ml-2 bg-white dark:bg-slate-800 lg:hidden">
         <input
           checked={navToggle}
-          onChange={() => {}}
+          onChange={() => setNavToggle(pre=>!pre)}
           type="checkbox"
         />
         <svg

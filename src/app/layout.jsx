@@ -4,6 +4,7 @@ import classNames from "@/utils/classNames";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Providers from "@/providers";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -25,15 +26,16 @@ const RootLayout = ({ children }) => {
           "container mx-auto px-2 font-roboto"
         )}
       >
-      
+        <Providers>
           <div className="flex min-h-screen flex-col justify-between">
             <div>
-              <NavBar></NavBar>
+              <NavBar />
               <main className="mt-5">{children}</main>
             </div>
             <Footer />
           </div>
-        
+        </Providers>
+
         <Toaster />
       </body>
     </html>
