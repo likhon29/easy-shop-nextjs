@@ -24,6 +24,7 @@ const AuthProvider = ({children}) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+  
   const profileUpdate = async (updateUser = {}) => {
     setLoading(true);
     await updateProfile(auth.currentUser, updateUser);

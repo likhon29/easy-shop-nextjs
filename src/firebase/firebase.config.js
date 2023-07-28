@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBvzbvU3qa_Gn5TBjEWi1PmD2A5OPPy2kg",
-  authDomain: "easy-shop-34249.firebaseapp.com",
-  projectId: "easy-shop-34249",
-  storageBucket: "easy-shop-34249.appspot.com",
-  messagingSenderId: "797575383821",
-  appId: "1:797575383821:web:f18d956ff09b6a45597e44",
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId
 };
 
 // Initialize Firebase
